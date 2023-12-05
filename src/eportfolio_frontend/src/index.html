@@ -1,24 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>eportfolio</title>
-    <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio Blockchain System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(to right, #006400, #00008B, #FFFF00);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+        }
+
+        header img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #4CAF50;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .hero-section {
+            background: url('p10.jpeg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .features-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .feature {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .certificate-verification {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 20px; /* Adjusted margin-bottom */
+        }
+
+        .certificate-verification label,
+        .certificate-verification input,
+        .certificate-verification button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .certificate-verification button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .certificate-verification button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background: linear-gradient(to right, #006400, #00008B, #FFFF00);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px; /* Added margin-top to create space */
+        }
+
+        /* Style for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+          .additional-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .additional-content h2,
+        .additional-content p {
+            text-align: center;
+        }
+
+        .additional-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .additional-content h2,
+        .additional-content p {
+            text-align: center;
+        }
+
+    
+    </style>
+</head>
+<body>
+
+    <header>
+      
+        <h1>E-Portfolio Blockchain System</h1>
+       
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#about">List of Accredited institutions</a>
+        <a href="#about">Request Accreditation</a>
+        <a href="#about">Hwo System works</a>
+        <a href="#about">Frequently asked questions</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Full-width Image Section -->
+    <div class="hero-section">
+        <h1>Welcome to Our E-Portfolio Blockchain System</h1>
+        <p>Empowering individuals and institutions with a secure and efficient e-portfolio experience.</p>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="feature">
+            <img src="p8.jpeg" alt="Certificate Verification">
+            <h2>Certificate Verification</h2>
+            <p>Step into the future with our E-Portfolio Blockchain System, redefining certificate originality and security. Leveraging advanced blockchain technology, our platform ensures each certificate is unalterably recorded,
+                providing a transparent and tamper-proof verification process.</p>
+          
+        </div>
+
+        <div class="feature">
+            <img src="p9.jpeg" alt="Institution Signup">
+            <h2>Institution Signup</h2>
+            <p>Join our network of institutions providing verified certificates. Sign up now!</p>
+        </div>
+
+        <div class="feature">
+            <img src="p12.jpeg" alt="Institution Login">
+            <h2>Institution Login</h2>
+            <p>Already a member? <a href="#" onclick="openLoginModal()">Log in</a> to manage certificates and access additional features.</p>
+        </div>
+    </section>
+
+
+
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+<!-- Styled Additional Content Section -->
+<section class="additional-content" style="padding: 20px; background-color: #f8f8f8; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 1600px; margin: auto;">
+    <h2 style="color: #336699;">Revolutionizing E-Portfolios with Blockchain Technology</h2>
+    <p>Welcome to our state-of-the-art E-Portfolio Blockchain System, where the convergence of cutting-edge blockchain technology sets a new standard for security and trust in the realm of academic and professional certifications. Discover how our advanced system stands out:</p>
+
+    <div style="display: flex; flex-wrap: wrap;">
+        <div style="flex: 1; margin-right: 10px;">
+            <h3 style="color: #4CAF50;">Blockchain Immersion</h3>
+            <p>Immerse yourself in the future of e-portfolios as our system harnesses the power of blockchain technology. Each certificate is eternally recorded in a decentralized, tamper-proof ledger, ensuring the utmost originality and trustworthiness.</p>
+        </div>
+
+        <div style="flex: 1; margin-right: 10px;">
+            <h3 style="color: #4CAF50;">Real-Time Verification Excellence</h3>
+            <p>Experience excellence in real-time certificate verification. With a simple entry of the unique certificate code, our system seamlessly cross-references with the blockchain, providing instant confirmation of legitimacy.</p>
+        </div>
+
+        <div style="flex: 1;">
+            <h3 style="color: #4CAF50;">Dynamic E-Portfolio Showcase</h3>
+            <p>Embark on a journey of dynamic E-Portfolio creation and display. Our user-centric interface empowers individuals to craft comprehensive portfolios, showcasing academic and professional achievements securely to institutions and potential employers.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <h3 style="color: #4CAF50;">Fortified User Authentication</h3>
+        <p>Rest assured with our robust security measures. Two-factor authentication, secure login protocols, and encryption mechanisms fortify user accounts, preserving information integrity within the sophisticated E-Portfolio Blockchain System.</p>
+
+        <h3 style="color: #4CAF50;">Sustained Innovation Drive</h3>
+        <p>Our commitment extends beyond the present, fueled by a relentless pursuit of innovation. The E-Portfolio Blockchain System consistently explores emerging technologies and industry best practices, ensuring a resilient and futuristic user experience.</p>
+    </div>
+</section>
+
+
+
+
+
+
+     <!-- Features Section -->
+     <section class="features-section">
+        <div class="feature">
+            <div class="certificate-verification">
+                <h2>Certificate Verification</h2>
+                <form>
+                    <label for="certificate">Enter Certificate Code:</label>
+                    <input type="text" id="certificate" name="certificate" required>
+                    <button type="submit">Verify Certificate</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="feature">
+            <h2>E-Portfolio and Certificate Originality Checking</h2>
+            <p>Step into the future with our E-Portfolio Blockchain System, redefining certificate originality and security. Leveraging advanced blockchain technology, our platform ensures each certificate is unalterably recorded,
+                 providing a transparent and tamper-proof verification process.</p>
+            <p>Discover real-time verification, dynamic E-Portfolios, and robust user authentication. 
+                
+                Your academic and professional achievements are not just showcased; they are safeguarded by 
+                the immutable power of blockchain, offering unparalleled trust and confidence in our innovative E-Portfolio system.</p>
+        <!-- Add more content as needed -->
+        </div>
+
+       
+    </section>
+<br><br><br><br><br><br><br>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 E-Portfolio Blockchain System. All rights reserved.</p>
+    </footer>
+
+   
+
+</body>
 </html>
