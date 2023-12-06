@@ -14,6 +14,10 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   button.removeAttribute("disabled");
 
   document.getElementById("greeting").innerText = greeting;
-
+  const frontendCid = window.location.origin.split('//')[1].split('.')[0];
+  const canisterId = process.env.FRONTEND_CANISTER_ID;
+  new webpack.EnvironmentPlugin({
+    FRONTEND_CANISTER_ID: canisters["frontend"]
+  })
   return false;
 });
