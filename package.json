@@ -9,9 +9,9 @@
     "Canister"
   ],
   "scripts": {
-    "build": "webpack",
+    "build": "node api.js && webpack",
     "prebuild": "dfx generate",
-    "start": "webpack serve --mode development --env development",
+    "start": "node api.js && webpack serve --mode development --env development",
     "deploy:local": "dfx deploy --network=local",
     "deploy:ic": "dfx deploy --network=ic",
     "generate": "dfx generate eportfolio_backend"

@@ -93,4 +93,5 @@ module.exports = {
     watchFiles: [path.resolve(__dirname, "src", frontendDirectory)],
     liveReload: true,
   },
+  
 };
